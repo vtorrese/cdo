@@ -1,0 +1,135 @@
+/* CDO Custom css */
+
+/* Déclaration des éléments:variables */
+:root {
+	--ma-couleur : #204cdb;
+	--ma-police : 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+}
+
+/* Balises universelles /////////////////////////////////*/
+body {
+	margin-left : 2%;
+	margin-right : 2%;
+	margin-top : 1%;
+}
+
+/* Balises génériques /////////////////////////////////*/
+.myButton {
+	width : 100%;
+	height : 35px;
+	border : none;
+	padding : 1%;
+	margin-top : 2%;
+	margin-left : auto;
+	margin-right : auto;
+	
+}
+
+.myButton:hover {
+	border : 1px solid black;
+	font-weight : bold;
+}
+
+.myInput {
+	width : 100%;
+	height : 35px;
+	margin : 1%;
+}
+
+.progression {
+	clear : both;
+}
+
+.titrepanneau {
+	color : var(--ma-couleur);
+	font-size : x-large;
+	
+}
+
+#bandeau_haut {
+	padding-top : 1%;
+	color : black;
+}
+
+
+#bandeau_footer {
+	background-image : url('fond.jpg');
+	background-attachment:fixed;
+	color : white;
+}
+
+.label_type {
+	color : var(--ma-couleur);
+	font-size : large;
+	padding : 1%;
+}
+
+.tab_result {
+	display : inline-block;
+	float : left;
+	min-width: 50%;
+	max-width : 50%;
+	padding : 2%;
+}
+
+.label_item {
+	color : var(--ma-couleur);
+	font-size : medium;
+}
+
+/* Balises menu /////////////////////////////////*/
+
+#menu {
+	padding-top : 4%;
+	background-image : url('fond.jpg');
+	background-attachment:fixed;
+	padding-bottom : 2%;
+}
+
+#menu img {
+	padding : 3%;
+	width : 50%;
+	height : auto;
+	margin-left : auto;
+	margin-right : auto;
+}
+
+/* Champ recherche & resultats /////////////////////*/
+
+#resultats {
+	height : 600px;
+}
+
+#fiche_image img {
+	width : 50%;
+	height : auto;
+}
+
+#fiche_image img:hover {
+	width : 100%;
+	height : auto;
+}
+/* Balises nouveautés /////////////////////////////////*/
+
+.panel_sug {
+	padding : 1%;
+	border-radius: 10px;
+	min-height : 250px;
+	max-height : 250px;
+	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+	overflow-x: hidden;
+}
+
+.panel_sug:hover {
+	box-shadow: 2px 2px 2px 1px black;
+}
+
+.panel_sug img {
+	width : 70%;
+	height : auto;
+}
+
+.panel_sug img:hover {
+	width : 100%;
+	height : auto;
+}
