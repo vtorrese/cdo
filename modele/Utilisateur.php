@@ -76,6 +76,12 @@ class Utilisateur
     
 	
 	
+	
+	
+	
+	
+	
+	
 }
 
 ?>
