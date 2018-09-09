@@ -13,7 +13,7 @@ if($status>1) {$couleur = "label label-primary";} else {$couleur = "label label-
 	<aside class="col-sm-12">
 		<span class='<?php echo $couleur; ?>' ><i class="glyphicon glyphicon-user" style="font-size:100%;"></i> <?php echo $donnees['user'][0]['prenom_user']." ".$donnees['user'][0]['nom_user']; if ($status==1) {echo " / Admin.";}?>
 		</span>
-	
+			
 	</aside>
 	
 	<aside class="col-sm-12">
@@ -26,8 +26,16 @@ if($status>1) {$couleur = "label label-primary";} else {$couleur = "label label-
 	<?php echo $donnees['user'][0]['lib_site']; ?>
 	
 	</aside>
+	<aside class="col-sm-12">
 	
+	Ancien mdp<input type="password" name="ancienmdp" id="ancienmdp">
+	Nouveau mdp<input type="password" name="ancienmdp" id="newmdp" OnKeyUp="verif(this.value)">
+	Confirmation<input type="password" name="ancienmdp" id="new2mdp">
+	<button type="button" id="validmp" onclick='validmdp()' style='float : right;'>Valider</button>
+	
+	</aside>
 </div>
+
 <button type="button" class="btn btn-primary btn-sm" onclick='efface("information_user")' style='float : right;'>Profil <span class="glyphicon glyphicon-resize-vertical"></span></button>
 <!-- Informations sur l'utilisateur (hors admin) -->
 <?php if($status>1) { ?>
@@ -43,6 +51,7 @@ if($status>1) {$couleur = "label label-primary";} else {$couleur = "label label-
 						<th>Sortie</th>
 						<th>Retour</th>
 						<th></th>
+						
 					  </tr>
 					</thead>
 						<tbody id="tab_pret" style="font-size : x-small">
@@ -107,6 +116,18 @@ if($status>1) {$couleur = "label label-primary";} else {$couleur = "label label-
 	init_panneau(iduser);
 	}
 	
+	/*function renouv(id,iduser) {
+			$.ajax({
+			   url : '../controleur/reserv.php',
+			   type : 'GET', 
+			   data : {"id":id,"iduser":iduser}, 
+			   dataType : 'html',
+			   success : function(data){
+					alert(data);
+			   }
+		}); 
+	init_panneau(iduser);
+	}*/
 	
 	function init_panneau(iduser) {
 		if(iduser!=null){
@@ -142,7 +163,7 @@ if($status>1) {$couleur = "label label-primary";} else {$couleur = "label label-
 							
 						} else
 						{
-							var lignepret = lignepret  + "<tr><td>" + objuser.pret[x].titre_doc + "</td><td>" + datedefS + "</td><td>" + datedefR + "</td></tr>";
+							var lignepret = lignepret  + "<tr><td>" + objuser.pret[x].titre_doc + "</td><td>" + datedefS + "</td></tr>";
 						}
 							
 					}
@@ -173,6 +194,27 @@ if($status>1) {$couleur = "label label-primary";} else {$couleur = "label label-
 			});
 		}
  
+		
+	}
+	
+	function verif(tape) {
+				
+		var critere = false;
+		var majuscule = false;
+		var numerique = false;
+				
+		for(i=0;i<tape.length;i++) {
+			if(tape[i].toUpperCase()!=tape[i]){majuscule = true;}
+			if(tape[i].isInteger()==true){numerique = true;}
+		}
+		
+
+		if(tape.length>=7) {
+			critere = true;} else {critere = false;}
+			
+		if((critere==true)&&(majuscule==true)&&(numerique==true)) {
+			document.getElementById('validmp').disabled = false;
+		}
 		
 	}
 
