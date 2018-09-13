@@ -10,7 +10,7 @@ class Connexion
 	{ //connection à la base de donnée      
 		try 
 		{      
-			$this->connectionBDD = new PDO('mysql:host=db713566197.db.1and1.com;dbname=db713566197;charset=utf8', 'dbo713566197', 'cdo-CFAI84', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+			$this->connectionBDD = new PDO('mysql:host=XXX.db.XX.com;dbname=XX;charset=utf8', '', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 		}
 		catch(Exception $e) 
 		{
